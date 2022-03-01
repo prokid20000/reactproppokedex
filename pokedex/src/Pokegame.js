@@ -10,30 +10,32 @@ const pokemonList = [
     { id: 39, name: 'Jigglypuff', type: 'normal', base_experience: 95 },
     { id: 94, name: 'Gengar', type: 'poison', base_experience: 225 },
     { id: 133, name: 'Eevee', type: 'normal', base_experience: 65 }
-  ];
-function Pokegame({pokemon=pokemonList}){
-    
-    
-    let hand1 = [];
-    let hand2 = [];
+];
+function Pokegame({ pokemon = pokemonList }) {
+    console.log("Pokegame ran");
+    const pokemonCopy = [...pokemon];
+    const hand1 = [];
+    // const hand2 = [];
     // const randomItemIndex = Math.floor(Math.random() * pokemon.length);
     let idx = 0;
 
-    while(idx < 4){
-        const randomPokeIndex = Math.floor(Math.random() * pokemon.length);
-        hand1.push(pokemon[randomPokeIndex]);
-        pokemon.splice(randomPokeIndex, 1);
+    while (idx < 4) {
+        let randomPokeIndex = Math.floor(Math.random() * pokemonCopy.length);
+        hand1.push(pokemonCopy[randomPokeIndex]);
+        pokemonCopy.splice(randomPokeIndex, 1);
         idx++;
-        console.log("hand1", hand1);
+        
     }
-    for(let i = 0; i < pokemon.length; i++){
-        hand2.push(pokemon[i]);
-        console.log("hand2", hand2);
-    }
-    return(
+    // for (let i = 0; i < pokemonCopy.length; i++) {
+    //     hand2.push(pokemonCopy[i]);
+        
+    // }
+    console.log("hand1", hand1);
+    // console.log("hand2", hand2);
+    return (
         <div>
-            <Pokedex pokemon={hand1}/>
-            <Pokedex pokemon={hand2}/>
+            <Pokedex pokemon={hand1} />
+            {/* <Pokedex pokemon={hand2} /> */}
         </div>
     );
 

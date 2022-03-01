@@ -3,6 +3,7 @@ import Pokecard from "./Pokecard";
 
 /**After getting array of pokemons it renders a sequence of Pokecard components */
 function Pokedex({pokemon}) {
+  console.log("pokemon is ", pokemon);
   return (
     <div className="Pokedex">
       {pokemon.map((p) => (
@@ -13,7 +14,6 @@ function Pokedex({pokemon}) {
           exp={p.base_experience}
         />
       ))}
-      ;
     </div>
   );
 }
