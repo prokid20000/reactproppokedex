@@ -1,10 +1,11 @@
 import React from "react";
 import Pokecard from "./Pokecard";
 
-function Pokedex(props) {
+/**After getting array of pokemons it renders a sequence of Pokecard components */
+function Pokedex({pokemon}) {
   return (
-    <div>
-      {props.map((p) => (
+    <div className="Pokedex">
+      {pokemon.map((p) => (
         <Pokecard
           id={p.id}
           name={p.name}
@@ -18,3 +19,5 @@ function Pokedex(props) {
 }
 
 export default Pokedex;
+
+// Always destructure props so that readers can understand what is in here
