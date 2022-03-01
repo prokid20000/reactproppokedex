@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokedex from './Pokedex';
+import Pokegame from './Pokegame';
 import './App.css';
 
 /**  This should just render a single Pokedex component.*/
@@ -16,7 +17,7 @@ function App() {
   ];
   return (
     <div className="App">
-      <Pokedex pokemon={pokemonList} />
+      <Pokegame />
     </div>
   );
 }
